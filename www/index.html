@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        --><meta name="format-detection" content="telephone=no">
+        <meta charset="UTF-8" />
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="width=device=width, initial-scale=1">
+        
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        
+        <link href= "jquerymobile/jquery.mobile-1.4.5.css" rel= "stylesheet" type= "text/css" />
+         
+        <script type= "text/javascript" src= "jquerymobile/demos/js/jquery.js"></script>
+        
+        <script type= "text/javascript" src= "jquerymobile/demos/js/jquery.mobile-1.4.5.js"></script>
+
+     
+        
+        <title>Group Monitoring System</title>
+
+        <style>
+        .footer {
+           position: fixed;
+           left: 0;
+           bottom: 0;
+           width: 100%;
+           text-align: center;
+        }
+        </style>
+
+
+
+    </head>
+    <body>
+    
+    
+<!----------------------------------------------------------------------  Start of Log In page ---------------------------------------------------------------------------> 
+    
+                <div data-role = "page" id= "log_in">
+                    <div data-role = "header"> 
+                    <h4> Login </h4>
+                    </div>
+            
+                    <div role = "main" class = "ui-content">
+                    
+                        <div class = "ui-field-contain" align= "center">
+                            
+                        <h2>Group Monitoring System</h2>
+                        
+                        <form id="login_form">
+                        
+                        <input type="text"      maxlength="7" data-mini="true"  name="login_username" id="login_username" placeholder="MATRIC NUMBER">
+                        <input type="password"  data-mini="true"                name="login_password" id="login_password" placeholder="PASSWORD">
+                        
+                        </form>
+                        
+                        <div class="ui-grid-a">
+                                                
+                            <div class="ui-block-a"><input type="button" data-role="tab" id="log_member" class="ui-btn-active" data-mini="true" value="MEMBER"></div>
+                            <div class="ui-block-b"><input type="button" data-role="tab" id="log_leader" class="ui-btn-active" data-mini="true" value="LEADER"></div>
+                                                
+                        </div>
+                        
+                        </div>
+                    
+                    <div align="right"><a href="#acc" name="newAcc" id="newAcc">CREATE ACCOUNT</a></div>
+                    
+                    <div id="display"></div>
+                    
+                    </div>
+                </div>
+                
+    
+<!-----------------------------------------------------------------  Create Account Page ---------------------------------------------------------------------------------> 
+    
+                     <div data-role="page" id="acc">
+                            <div data-role="header">
+                                <h1>New Account</h1>
+                            </div>
+
+                     <div role="main" class="ui-content">
+                        
+                        <div class="ui-field-contain" align="center">
+                            
+                            <form id="newAccount">
+                                
+                                <input type="text" data-clear-btn="true" data-mini="true"               name="new_name" id="new_name" value="" placeholder="NAME">
+                                                         
+                                <input type="text" data-clear-btn="true" data-mini="true" maxlength="7" name="new_username" id="new_username" value="" placeholder="MATRIC NUMBER">
+                                
+                                <input type="password" data-clear-btn="true" data-mini="true"           name="new_password" id="new_password" value="" placeholder="PASSWORD">
+                                
+                                    <br>
+
+                                        <input type="submit" id="create_acc_submit" data-mini="true" value="Submit">
+                            
+                            </form>
+
+                                    <input type="button" id="cancel" data-mini="true" value="Cancel">
+                                
+                            </div>
+                        </div>
+                    </div>
+    
+ 
+         
+<!--------------------------------------------------------------------------  Leader Page -------------------------------------------------------------------------->
+        
+                    <div data-role = "page" id="leader_page">
+                        
+                        <div data-role="header">
+                        
+                            <a href="#create_project" class="ui-btn ui-mini ui-btn-inline ui-btn-left ui-corner-all ui-icon-plus ui-btn-icon-left">New</a>
+                            <a href="#log_in" class="ui-btn ui-mini ui-btn-inline ui-btn-right ui-corner-all">Logout</a>
+                            
+                            <h1><div id="welcome_leader"></div></h1>
+                        
+                        </div>    
+                    
+                        <div role="main">
+                                    <ol data-role="listview" id="listgroup" data-theme="a">
+                                    </ol>
+                        </div>
+                                
+                        <div data-role="footer" class="footer">
+                    
+                            <a href="#rate" class="ui-btn ui-icon-star ui-btn-icon-left">Rating</a> 
+                            <a href="#viewrate"  class="ui-btn ui-icon-heart ui-btn-icon-left" >View Rating</a>
+                    
+                    
+                        </div>
+                
+                    </div>
+        
+        
+        
+<!-------------------------------------------------------------------------  Member Page --------------------------------------------------------------------------------->
+        
+                    <div data-role = "page" id="member_page">
+                        
+                        <div data-role="header">
+                        
+                            <a href="#log_in" class="ui-btn ui-mini ui-btn-inline ui-btn-right ui-corner-all">Logout</a>    
+                            <h1><div id="welcome_member"></div></h1>
+            
+                        </div>
+                        
+                        <div data-role="main">
+                                
+                                    
+                                
+                            <div class="center-wrapper">
+                                <div class="ui-grid-a">
+                                                
+                                    <div class="ui-block-a">
+                                        <a href="#" id="uploadPicture" class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-grid" data-icon="grid">Upload</a></div>
+                                    <div class="ui-block-b">
+                                        <a href="#" id="snap-a-photo" class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-camera" data-icon="camera">Snap</a></div>
+                                </div>
+                                    <!-- <a href="#" id="download" class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-arrow-d" data-icon="arrow-d">download</a> -->
+                            </div>   
+                        </div>
+                    </div>
+                    
+<!------------------------------------------------------------------  Create Project Page -------------------------------------------------------------------------------->
+        
+            <div data-role = "page" id="create_project">
+                <div data-role="header">
+                    <a href="#leader_page" class="ui-btn ui-btn-left ui-corner-all ui-icon-carat-l ui-btn-icon-left ui-shadow-icon ui-btn-icon-notext"></a>
+                    <h1>Add Project</h1>
+                </div>    
+            
+                <div data-role="main">
+            
+                    <div class="ui-field-contain" align="center">
+                      
+                      <form id="new_project">
+                        
+                            Subject: <input name="subjek" id="subjek" data-clear-btn="true" value="" placeholder="subject name" data-theme="a" type="text"/>
+                 
+                            
+                            Group Name : <input type="text" value="" id="name"  name="name" placeholder="group">
+                            
+                            Matric Num : <input type="text" maxlength="7" name="matric1" id="matric1" placeholder="Matric" >
+                            
+                            Year <select name="year" id="year1">
+                                         <option value="1"> 1 </option>
+                                         <option value="2"> 2 </option>
+                                         <option value="3"> 3 </option>
+                                         <option value="4"> 4 </option>  
+                                </select>
+                  
+                            
+                            Matric Num : <input type="text" maxlength="7" name="matric2" id="matric2" placeholder="Matric" >
+                            
+                            Year <select name="year2" id="year2">
+                                        <option value="1"> 1 </option>
+                                        <option value="2"> 2 </option>
+                                        <option value="3"> 3 </option>
+                                        <option value="4"> 4 </option>  
+                                </select>
+                  
+                        
+                            Matric Num : <input type="text" name="matric3" id="matric3" placeholder="Matric" >
+                            
+                            Year <select name="year3" id="year3">
+                                        <option value="1"> 1 </option>
+                                        <option value="2"> 2 </option>
+                                        <option value="3"> 3 </option>
+                                        <option value="4"> 4 </option>  
+                                </select>
+                        
+                        
+                            
+                            Matric Num : <input type="text" maxlength="7" name="matric4" id="matric4" placeholder="Matric" >
+                            
+                            Year <select name="year4" id="year4">
+                                    <option value="1"> 1 </option>
+                                    <option value="2"> 2 </option>
+                                    <option value="3"> 3 </option>
+                                    <option value="4"> 4 </option>  
+                                </select>
+                            
+                        
+                            Matric Num : <input type="text" maxlength="7" name="matric5" id="matric5" placeholder="Matric" >
+                            
+                            Year <select name="year5" id="year5">
+                                <option value="1"> 1 </option>
+                                <option value="2"> 2 </option>
+                                <option value="3"> 3 </option>
+                                <option value="4"> 4 </option>  
+                            </select>
+                  
+                            Tasks: <textarea rows="10" cols="70" id="task" name="task" ></textarea>
+                   
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a"><input type="reset" id="cancel" data-mini="true" value="Cancel"></div>
+                            <div class="ui-block-b"><input type="submit" id="new_subject_submit" data-mini="true" value="Submit"></div>
+                        </div>
+                    </form>
+                       
+                    </div>      
+                </div>
+             
+             </div> 
+        
+<!-------------------------------------------------------------------------- View Rate Page ------------------------------------------------------------------------------>
+        
+        
+            <div data-role="page" id="viewrate">
+                        <div data-role="header">
+                            <a href="#leader_page" class="ui-btn ui-icon-carat-l ui-btn-icon-left ui-btn-icon-notext ui-corner-all"></a>
+                            <h1>View Rating</h1>
+                        </div>
+                        
+                            <div role="main" class="ui-content">
+                                
+                                <div class="ui-field-contain" align="center">
+                                    <ul data-role="listview" id="createlist" data-theme="a"></ul>
+                                </div>
+                                
+                           </div>
+            </div>
+        
+        
+<!-------------------------------------------------------------------- Subject Details Page ------------------------------------------------------------------------------> 
+        
+            <div data-role="page" id="subject_details">
+    
+                        <div data-role="header">
+                            <a href="#leader_page" class="ui-btn ui-icon-carat-l ui-btn-icon-left ui-btn-icon-notext ui-corner-all"></a>
+                            <h1>List of Group</h1>
+                        </div>
+                        
+    
+                        <div role="main" class="ui-content">
+                            <div class="ui-field-contain" align="center">
+                                    <form id="deleterecord">
+                                        <ul data-role="listview" id="list" data-theme="a"></ul>
+    
+                                         <input type="hidden" id="ID" name="ID" value="">
+                                        
+                                         <br><br>
+                                         
+                                         <div class="ui-grid-a"></div>
+                                    </form>
+                            </div>  
+                        </div>
+    
+            </div>
+            
+<!------------------------------------------------------------------------ Rating Page ------------------------------------------------------------------------------------>
+            
+            <div data-role="page" id="rate">
+                    <div data-role="header">
+                        <a href="#leader_page" class="ui-btn ui-icon-carat-l ui-btn-icon-left ui-btn-icon-notext ui-corner-all"></a>
+                        <h1>Rate</h1>
+                    </div>
+                    
+                    
+                    <div role="main" class="ui-content">
+                          <div class="ui-field-contain" align="center">
+                              <form id="newrating">
+                              
+                              <input type="text" maxlength="4" name="rate_sub_id" id="rate_sub_id" placeholder="SUBJECT ID">
+                              
+                              <input type="text" id="mem_1" name="mem_1" placeholder="MATRIC NO">
+                              Rating <select name="rate_1" id="rate_1">
+                                            <option value="1"> 1 </option>
+                                            <option value="2"> 2 </option>
+                                            <option value="3"> 3 </option>
+                                            <option value="4"> 4 </option>  
+                                            <option value="5"> 5 </option>
+                                     </select>
+                               
+                              
+                                
+                                <div class="ui-grid-a">
+                                    <div class="ui-block-a"><input type="reset" id="cancel" data-mini="true" value="Cancel"></div>
+                                    <div class="ui-block-b"><input type="submit" id="submit" data-mini="true" value="Submit"></div>
+                                </div>
+                              </form>
+                          </div>
+                    </div>
+              </div>
+        
+        
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------>        
+        
+     
+        
+        
+      
+        
+    <script type = "text/javascript" src = "js/index.js"></script>
+    
+    <script type = "text/javascript">
+        $(document).bind("mobileinit", function() {
+            $.support.cors = true;
+            $.mobile.allowCrossDomainPages = true;
+            });
+    </script>
+        
+    </body>
+</html>

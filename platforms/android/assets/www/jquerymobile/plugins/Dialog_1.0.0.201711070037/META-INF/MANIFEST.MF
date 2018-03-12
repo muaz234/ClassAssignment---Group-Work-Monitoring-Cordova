@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: Dialog
+Bundle-Name: Dialog
+Bundle-Version: 1.0.0.201711070037
+Bundle-ManifestVersion: 2
+
+
